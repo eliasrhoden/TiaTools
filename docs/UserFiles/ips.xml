@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IpAddrEntries xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IpAddrEntry>
+    <path>S7-1500/ET200MP station_1/PLC/PROFINET interface_1</path>
+    <deviceName>S7-1500/ET200MP station_1</deviceName>
+    <ipAddress>192.168.0.1</ipAddress>
+    <profinetDeviceName>plc.profinetxainterfacexb13a48</profinetDeviceName>
+    <profinetCleanDeviceName>plc.profinet interface_1</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>S7-1500/ET200MP station_1/PLC/PROFINET interface_2</path>
+    <deviceName>S7-1500/ET200MP station_1</deviceName>
+    <ipAddress>192.168.1.1</ipAddress>
+    <profinetDeviceName>plc.profinetxainterfacexb23b08</profinetDeviceName>
+    <profinetCleanDeviceName>plc.profinet interface_2</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>S7-1500/ET200MP station_1/PLC/PROFINET interface GBIT_3</path>
+    <deviceName>S7-1500/ET200MP station_1</deviceName>
+    <ipAddress>192.168.2.1</ipAddress>
+    <profinetDeviceName>plc.profinetxainterfacexagbitxb34a07</profinetDeviceName>
+    <profinetCleanDeviceName>plc.profinet interface gbit_3</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>HMI2/HMI2.IE_CP_1/PROFINET Interface_1</path>
+    <deviceName>HMI2</deviceName>
+    <ipAddress>192.168.0.8</ipAddress>
+    <profinetDeviceName>hmi2.profinetxainterfacexb10656</profinetDeviceName>
+    <profinetCleanDeviceName>hmi2.profinet interface_1</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>HMI2/HMI2.IE_CP_2/PROFINET Interface_GBit</path>
+    <deviceName>HMI2</deviceName>
+    <ipAddress>192.168.1.2</ipAddress>
+    <profinetDeviceName>hmi2.profinetxainterfacexbgbit917d</profinetDeviceName>
+    <profinetCleanDeviceName>hmi2.profinet interface_gbit</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>HMI1/HMI1.IE_CP_1/PROFINET Interface_1</path>
+    <deviceName>HMI1</deviceName>
+    <ipAddress>192.168.0.7</ipAddress>
+    <profinetDeviceName>hmi1.profinetxainterfacexb1f9b2</profinetDeviceName>
+    <profinetCleanDeviceName>hmi1.profinet interface_1</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>HMI1/HMI1.IE_CP_2/PROFINET Interface_GBit</path>
+    <deviceName>HMI1</deviceName>
+    <ipAddress>192.168.1.2</ipAddress>
+    <profinetDeviceName>hmi1.profinetxainterfacexbgbit567c</profinetDeviceName>
+    <profinetCleanDeviceName>hmi1.profinet interface_gbit</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>SINAMICS G_1/AsyncDrive1/PROFINET interface</path>
+    <deviceName>SINAMICS G_1</deviceName>
+    <ipAddress>192.168.0.9</ipAddress>
+    <profinetDeviceName>asyncdrive1</profinetDeviceName>
+    <profinetCleanDeviceName>asyncdrive1</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>SINAMICS G_2/AsyncDrive2/PROFINET interface</path>
+    <deviceName>SINAMICS G_2</deviceName>
+    <ipAddress>192.168.0.10</ipAddress>
+    <profinetDeviceName>asyncdrive2</profinetDeviceName>
+    <profinetCleanDeviceName>asyncdrive2</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>ET 200SP station_1/DistIO1/PROFINET interface</path>
+    <deviceName>ET 200SP station_1</deviceName>
+    <ipAddress>192.168.0.2</ipAddress>
+    <profinetDeviceName>distio1</profinetDeviceName>
+    <profinetCleanDeviceName>distio1</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>ET 200SP station_2/DistIO2/PROFINET interface</path>
+    <deviceName>ET 200SP station_2</deviceName>
+    <ipAddress>192.168.0.3</ipAddress>
+    <profinetDeviceName>distio2</profinetDeviceName>
+    <profinetCleanDeviceName>distio2</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>ET 200eco station_1/DistNode1/PROFINET interface</path>
+    <deviceName>ET 200eco station_1</deviceName>
+    <ipAddress>192.168.0.4</ipAddress>
+    <profinetDeviceName>distnode1</profinetDeviceName>
+    <profinetCleanDeviceName>distnode1</profinetCleanDeviceName>
+  </IpAddrEntry>
+  <IpAddrEntry>
+    <path>ET 200eco station_2/DistNode2/PROFINET interface</path>
+    <deviceName>ET 200eco station_2</deviceName>
+    <ipAddress>192.168.0.5</ipAddress>
+    <profinetDeviceName>distnode2</profinetDeviceName>
+    <profinetCleanDeviceName>distnode2</profinetCleanDeviceName>
+  </IpAddrEntry>
+</IpAddrEntries>
