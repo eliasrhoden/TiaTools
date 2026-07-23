@@ -40,10 +40,15 @@ As an example, here is the address configuration of one node in the project:
 It can also handle drive telegrams, here is one of the G120C-drives
 ![](docs/g120_telegram.png)
 
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AddressEntries xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AddressEntry>
+    <Path>ET 200SP station_1/DI 8/DI 8/Input</Path>
+    <StartAddr>10</StartAddr>
+    <Length>1</Length>
+  </AddressEntry>
+  ...
   <AddressEntry>
     <Path>SINAMICS G_1/AsyncDrive1/MainTelegram Nr 1/Input</Path>
     <StartAddr>258</StartAddr>
@@ -54,12 +59,6 @@ It can also handle drive telegrams, here is one of the G120C-drives
     <StartAddr>258</StartAddr>
     <Length>4</Length>
   </AddressEntry>
-  ...
-  <AddressEntry>
-    <Path>ET 200SP station_1/DI 8/DI 8/Input</Path>
-    <StartAddr>10</StartAddr>
-    <Length>1</Length>
-  </AddressEntry>
 </AddressEntries>
 ```
 
@@ -67,6 +66,8 @@ It can also handle drive telegrams, here is one of the G120C-drives
 As far as I'm aware, it is not possible to show a list of all IP addresses in a given network or project; you must click on each HW device and check its configuration.
 
 This gets boring quickly, so with this add-in you can export and import **all IP-adresses in the entire project**, if you want to make changes you can then re-import them and the IP-adresses will be updated.
+
+Please note that there are two PROFINET device names in TIA Portal: a *clean* name, which is allowed to contain illegal characters, and the actual name, that been converted from the *clean name*.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -131,8 +132,6 @@ This gets boring quickly, so with this add-in you can export and import **all IP
   ...
 </IpAddrEntries>
 ```
-
-
 
 ## Create an empty add-in project
 
