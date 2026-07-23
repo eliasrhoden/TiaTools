@@ -1,35 +1,28 @@
 # TIA Tools
 
-Some addins I've created for TIA portal V20 that might be usefull for others or as example to develop their own.
+Some add-ins I've created for TIA Portal V20 that might be useful for others or as examples for developing their own.
 
 The functions I've implemented are:
 * Prepare *Go-Online* settings for G120-drives
-* Export of I/O map for all devices, i.e. you can see the adress space occupied by all devices
-* Export IP-adresses and profinet-device names
-* Import IP-adresses and profinet-device names
-
+* Export of I/O map for all devices, i.e. you can see the address space occupied by all devices
+* Export/import IP addresses and PROFINET device names
 
 ![](docs/addin_context_menu.png)
 
-Information from Siemens: 
-* [https://support.industry.siemens.com/cs/document/109773999/tia-portal-add-ins?dti=0&lc=en-US](https://support.industry.siemens.com/cs/document/109773999/tia-portal-add-ins?dti=0&lc=en-US)
-* [https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-add-in-development-tools/cybersecurity-information](https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-add-in-development-tools/cybersecurity-information)
-* [https://support.industry.siemens.com/cs/document/109760816/tia-portal-openness-explorer?dti=0&lc=en-CA](https://support.industry.siemens.com/cs/document/109760816/tia-portal-openness-explorer?dti=0&lc=en-CA)
+## Installation
+If you just want to use the add-in yourself, copy the **bin\debug\TiaTools.addin** file to the **Add-ins** folder of your TIA installation.
 
-
-If you simply want to use the Addin yourself, just copy the **bin\debug\TiaTools.addin** file to the **Addins***-folder of your TIA Installation.
-
-**NOTICE**: Be cautions, I take no responsibility if you mess up your TIA projects with this, USE AT YOUR OWN RISK! 
+**NOTICE**: Be cautious. I take no responsibility if you mess up your TIA projects with this. USE AT YOUR OWN RISK!
 
 # Example project
-I will give an example of each addin from a Dummy-example project, the HW-overview looks like this
+This is the HW of the example project used to showcase the addin. The generated files can be inspected under **docs/UserFiles**.
 
 ![docs/example_proj.png](docs/example_proj.png)
 
 # Online prepare
 If you have to go online on multiple G120 drives, you need to select the connection setup for each individual drive, i.e. profinet, network adapter and target port.
 
-Whith this addin you can select all drives you wish to go online on, then it will ask for the settings to apply for all drives. After running the addin, TIA remembers the settings and just the *Go-Online* button will work.
+With this add-in, you can select all drives in the project tree that you wish to go online with, and it will ask for the settings to apply to all drives. After running the add-in, TIA remembers the settings, and the *Go-Online* button will work.
 
 ![](docs/online_mode.png)
 ![](docs/online_adapter.png)
@@ -37,9 +30,16 @@ Whith this addin you can select all drives you wish to go online on, then it wil
 
 # Export I/O map for each device
 
-Sometimes one wants to get an overview *What hardware uses what adress-space?*
+Sometimes one wants to get an overview of *which hardware uses what address space*.
 
 This addin creates an XML-file in the *UserFiles* directory of the project.
+
+As an example, here is the address configuration of one node in the project:
+![](docs/et200sp_addr.png)
+
+It can also handle drive telegrams, here is one of the G120C-drives
+![](docs/g120_telegram.png)
+
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -56,22 +56,17 @@ This addin creates an XML-file in the *UserFiles* directory of the project.
   </AddressEntry>
   ...
   <AddressEntry>
-    <Path>ET 200SP station_1/DQ 4/DQ 4/Output</Path>
+    <Path>ET 200SP station_1/DI 8/DI 8/Input</Path>
     <StartAddr>10</StartAddr>
-    <Length>1</Length>
-  </AddressEntry>
-  <AddressEntry>
-    <Path>ET 200eco station_2/DistNode2/8 DI DC24V 4xM12/Input</Path>
-    <StartAddr>101</StartAddr>
     <Length>1</Length>
   </AddressEntry>
 </AddressEntries>
 ```
 
 # Export/Import IP-addresses
-As far as I'm aware, there is not possible to show a list of all ip-addresses in a given network or project, you must click on each HW-device and check in their configuration.
+As far as I'm aware, it is not possible to show a list of all IP addresses in a given network or project; you must click on each HW device and check its configuration.
 
-This gets boring quickly, so with this you can export and import **all IP-adresses in the entire project**, if you want to make changes you can then re-import them and the IP-adresses will be updated.
+This gets boring quickly, so with this add-in you can export and import **all IP-adresses in the entire project**, if you want to make changes you can then re-import them and the IP-adresses will be updated.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -139,7 +134,15 @@ This gets boring quickly, so with this you can export and import **all IP-adress
 
 
 
-## Create a empty project
+## Create an empty add-in project
+
+Here is some information if you want to create your own add-in from scratch.
+
+Information from Siemens: 
+* [https://support.industry.siemens.com/cs/document/109773999/tia-portal-add-ins?dti=0&lc=en-US](https://support.industry.siemens.com/cs/document/109773999/tia-portal-add-ins?dti=0&lc=en-US)
+* [https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-add-in-development-tools/cybersecurity-information](https://docs.tia.siemens.cloud/r/en-us/v21/tia-portal-add-in-development-tools/cybersecurity-information)
+* [https://support.industry.siemens.com/cs/document/109760816/tia-portal-openness-explorer?dti=0&lc=en-CA](https://support.industry.siemens.com/cs/document/109760816/tia-portal-openness-explorer?dti=0&lc=en-CA)
+
 
 After installing build tools, I only use VS Code and the terminal.
 
@@ -160,7 +163,7 @@ New
 <HintPath>@(TiaPortalLocation)\PublicAPI\V20.AddIn\Siemens.Engineering.AddIn.dll</HintPath>
 ```
 
-Also in in the `Config.xml`
+Also in the `Config.xml`
 
 ```
 <PackageConfiguration xmlns="http://www.siemens.com/automation/Openness/AddIn/Publisher/V19">
@@ -172,5 +175,5 @@ Also in in the `Config.xml`
 
 5. Try to build, run `Ctrl+Shift+P` in VS Code and select `Run build task`
 
-If it worked, you should end up with a addin in the `bin/debug`folder that you can drag into C:/Programs/**TIA INSTALL FOLDER**/Addins
+If it worked, you should end up with an add-in in the `bin/debug` folder that you can drag into `C:/Programs/**TIA INSTALL FOLDER**/Add-ins`.
 
